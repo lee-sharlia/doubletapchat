@@ -1,0 +1,41 @@
+<body>
+  <header>
+    <div class="header_container">
+    <img src="https://cdn3.iconfinder.com/data/icons/unicons-vector-icons-pack/32/messages-512.png">
+      <h1>DoubleTap Chat</h1>
+           </div>
+  </header>
+  <div class="main_content">
+  <div class="message_content">
+      
+    <div class="wrapper">
+        <% @messages.each do |message| %> 
+            <div class="message"> 
+              <p class="content"><%= message.content %></p> 
+              <p class="time"><%= message.created_at %></p> 
+    </div> 
+    <% end %>
+</div>
+    <table colspan="2">
+      <tr>
+        <td>
+        <button class="chat_button">
+          <%= link_to 'Reply', "messages/new" %>
+        </button>  
+          
+        </td>
+        <td>
+        <button class="chat_button">
+          <%= link_to 'Delete', "messages/destroy" %>
+        </button>  
+          
+        </td>
+      </tr>
+    </table>
+  </div>
+  <footer>
+    <div class="footer-wrapper">
+      <p style="color: white;">DoubleTap Chat - A Personal Messaging App | <small><em>Built by Lia, Studio Oro LLC</em></small></p>
+    </div>
+  </footer>
+</body>
